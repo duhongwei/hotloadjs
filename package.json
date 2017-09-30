@@ -1,14 +1,14 @@
 {
-  "name": "lego-web",
+  "name": "hotloadjs",
   "version": "1.0.0",
   "description": "a hotload module loader for the web",
-  "main": "lego.js",
+  "main": "hotload.js",
   "scripts": {
     
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/duhongwei/legojs.git"
+    "url": "https://github.com/duhongwei/hotloadjs.git"
   },
   "keywords": [
     "hotload",
@@ -18,7 +18,7 @@
   "author": "duhongwei",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/duhongwei/legojs/issues"
+    "url": "https://github.com/duhongwei/hotloadjs/issues"
   },
-  "homepage": "https://github.com/duhongwei/legojs#readme"
+  "homepage": "https://duhongwei.gitbooks.io/hotloadjs"
 }
