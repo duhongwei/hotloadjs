@@ -1,5 +1,5 @@
 {
-  "name": "legojs",
+  "name": "lego-web",
   "version": "1.0.0",
   "description": "a hotload module loader for the web",
   "main": "lego.js",
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/duhongwei/legojs.git"
+    "url": "https://github.com/duhongwei/legojs.git"
   },
   "keywords": [
     "hotload",
