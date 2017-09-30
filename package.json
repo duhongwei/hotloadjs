@@ -1,0 +1,24 @@
+{
+  "name": "legojs",
+  "version": "1.0.0",
+  "description": "a hotload module loader for the web",
+  "main": "lego.js",
+  "scripts": {
+    
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/duhongwei/legojs.git"
+  },
+  "keywords": [
+    "hotload",
+    "loader",
+    "module"
+  ],
+  "author": "duhongwei",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/duhongwei/legojs/issues"
+  },
+  "homepage": "https://github.com/duhongwei/legojs#readme"
+}
