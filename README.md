@@ -13,6 +13,11 @@ hotloadjs is a module loader for the web,which support hotload. It is especially
 
 ie6+ and all modern browsers
 
+## examples
+``` shell
+npm run example
+```
+only one example available, more examples will come soon.
 
 ## License
 
