@@ -1,6 +1,6 @@
 {
   "name": "hotloadjs",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "a hotload module loader for the web",
   "main": "./lib/index.js",
   "scripts": {
