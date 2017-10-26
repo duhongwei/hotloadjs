@@ -1,10 +1,10 @@
 {
   "name": "hotloadjs",
   "version": "1.0.4",
-  "description": "a hotload module loader for the web",
-  "main": "./lib/index.js",
+  "description": "a hotload module loader for browser",
+  "main": "hotload.js",
   "scripts": {
-    "example": "node examples/app.js"
+    "test": "eslint hotload.js"
   },
   "repository": {
     "type": "git",
@@ -17,14 +17,12 @@
   ],
   "author": "duhongwei",
   "license": "MIT",
-  "dependencies": {
-    "chokidar": "^1.7.0",
-    "ws": "^3.2.0",
-    "koa": "^2.3.0",
-    "koa-static": "^4.0.1"
-  },
+  "dependencies": {},
   "bugs": {
     "url": "https://github.com/duhongwei/hotloadjs/issues"
   },
-  "homepage": "https://duhongwei.gitbooks.io/hotloadjs"
+  "homepage": "https://duhongwei.gitbooks.io/hotloadjs",
+  "devDependencies": {
+    "eslint":"*"
+  }
 }
