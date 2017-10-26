@@ -1,6 +1,6 @@
 {
   "name": "hotloadjs",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "a hotload module manager for browser",
   "main": "hotload.js",
   "scripts": {
@@ -22,6 +22,6 @@
   },
   "homepage": "https://duhongwei.gitbooks.io/hotloadjs",
   "devDependencies": {
-    "eslint":"^4.9.0"
+    "eslint": "^4.9.0"
   }
 }
