@@ -1,29 +1,46 @@
-# A Hotload Module Loader for the Web
+# 一个模块管理器 
 
-hotloadjs is a module loader for the web,which support hotload. It is especially for in-browser use. here is just an overview. you can get more detail at [hotloadjs book ](https://duhongwei.gitbooks.io/hotloadjs "hotloadjs book")
+hotloadjs 是用于浏览器环境的模块管理器。
 
-[中文文档](https://duhongwei.gitbooks.io/hotloadjs/content/zh-cn/)
+详情请查看
+[文档](https://duhongwei.gitbooks.io/hotloadjs/content/zh-cn/)
+
+[README in English](README_EN.md)
+## 功能
+
+- 处理依赖
+- 模块热替换后自动清理环境
+- 模块热替换后保持原来状态
+- 模块热替换后，所有直接或间接依赖它的模块自动更新
 
 
-## Features #
+## 浏览器支持
 
-- hotload supported
+ie6+ ,和所有现代浏览器
 
-- function is not fired until dependencies have loaded
+## 用法
 
-## browser supported
+在页面中引用 hotload.js 或 hotload.mini.js
 
-ie6+ and all modern browsers
-
-## examples
-``` shell
-npm run example
+比如：
+``` html
+<script src='hotload.js'></script>
 ```
-[more detail](https://duhongwei.gitbooks.io/hotloadjs/content/zh-cn/example.html)
+hotloadjs会在全局定义 define,require两个方法，用来定义和获取模块
 
-only one example available, more examples will come soon.
+## 测试
 
-## License
+### 检查语法
+``` shell
+npm test
+```
 
-Legojs.js is available under the terms of the MIT License
+如果没有安装 eslint 需要先运行
+
+``` shell
+npm install
+```
+### 测试逻辑
+
+在test文件夹里 运行 index.html，可以看到测试报告
 
