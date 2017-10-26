@@ -1,6 +1,9 @@
-/**
- * MIT license
- * author:duhongwei <
+/*!
+ * hotloadjs v1.0.6
+ * 
+ * author: duhongwei
+ * Released under the MIT license
+ * Date: 2017
  */
 (function (global) {
   'use strict';
