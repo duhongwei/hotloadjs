@@ -31,7 +31,7 @@ hotloadjs add define and require function in global
 
 examples are in hotloadjs-cli project
 
-```shell
+``` shell
 npm install -g hotloadjs-cli
 ```
 
