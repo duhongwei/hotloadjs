@@ -33,7 +33,6 @@ examples are in hotloadjs-cli project
 
 ```shell
 npm install -g hotloadjs-cli
-npm start
 ```
 
 ## Test

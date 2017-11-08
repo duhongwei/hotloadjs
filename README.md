@@ -34,7 +34,6 @@ hotloadjs会在全局定义 define,require两个方法，用来定义和获取�
 
 ``` shell
 npm install -g hotloadjs-cli
-npm start
 ```
 
 ## 测试

@@ -1,5 +1,5 @@
 /*!
- * hotloadjs v1.0.8
+ * hotloadjs v1.0.9
  * 
  * author: duhongwei
  * Released under the MIT license
@@ -320,7 +320,7 @@
   function defineLegoMod() {
     define('lego', function () {
       return {
-        version: '1.0.8',
+        version: '1.0.9',
         has: has,
         inspect: inspect,
         reset: reset,
