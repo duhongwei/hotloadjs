@@ -1,6 +1,6 @@
 {
   "name": "hotloadjs",
-  "version": "1.0.6",
+  "version": "1.0.8",
   "description": "a hotload module manager for browser",
   "main": "hotload.js",
   "scripts": {

@@ -1,5 +1,5 @@
 /*!
- * hotloadjs v1.0.6
+ * hotloadjs v1.0.8
  * 
  * author: duhongwei
  * Released under the MIT license
@@ -126,14 +126,14 @@
   }
   function getLastScriptPath() {
     var path = document.scripts[document.scripts.length - 1].src.split(/[?#]/)[0];
-    if (!path) { 
+    if (!path) {
       return false;
     }
     var pathMatch = path.match(/^https?:\/\/[^/]+\/(.+)\.js$/)
     if (pathMatch) {
       path = pathMatch[1];
     }
-    else { 
+    else {
       path = path.replace('.js', '');
     }
     return path;
@@ -245,7 +245,7 @@
       if (mod.type == 'define') {
         dealWaiting();
       }
-      
+
     }
     else {
       waitingMod.push(mod);
@@ -255,7 +255,7 @@
   function require(key, deps, fun) {
     if (arguments.length === 1 && typeof key === 'string') {
       if (key in readyMod) {
-        
+
         return readyMod[key].funed;
       }
       else {
@@ -311,9 +311,7 @@
       logger.setConfig(_config_.log);
     }
   }
-  function setLastReadyModuleKey(key) {
-    readyMod.last.key = key;
-  }
+
   function has(filePath) {
     var key = filePath.replace('.js', '');
     return (key in readyMod);
@@ -322,12 +320,12 @@
   function defineLegoMod() {
     define('lego', function () {
       return {
+        version: '1.0.8',
         has: has,
         inspect: inspect,
         reset: reset,
         load: load,
-        setConfig: setConfig,
-        setLastReadyModuleKey: setLastReadyModuleKey
+        setConfig: setConfig
       };
     });
   }

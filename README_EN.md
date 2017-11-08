@@ -27,6 +27,15 @@ example：
 ```
 hotloadjs add define and require function in global
 
+## examples
+
+examples are in hotloadjs-cli project
+
+```shell
+npm install -g hotloadjs-cli
+npm start
+```
+
 ## Test
 
 ### Syntax test

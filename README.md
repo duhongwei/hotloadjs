@@ -28,6 +28,15 @@ ie6+ ,和所有现代浏览器
 ```
 hotloadjs会在全局定义 define,require两个方法，用来定义和获取模块
 
+## 演练
+
+实例在 hotloadjs-cli里面
+
+``` shell
+npm install -g hotloadjs-cli
+npm start
+```
+
 ## 测试
 
 ### 检查语法
