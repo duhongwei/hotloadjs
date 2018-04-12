@@ -1,9 +1,8 @@
 /*!
- * hotloadjs v1.0.9
+ * hotloadjs v1.1.0
  * 
  * author: duhongwei
  * Released under the MIT license
- * Date: 2017
  */
 (function (global) {
   'use strict';
@@ -33,34 +32,65 @@
       reset: reset
     };
   })();
+  //var onload = onreload = function () { }
+  var event = {
+    on: function (type, fun) {
+      this._event = this._event || {};
+      this._event[type] = this._event[type] || [];
+      this._event[type].push(fun);
+    },
+    emit: function (type, data) {
+      var v = true
+      if (!this._event || !this._event[type]) { return v; }
+      for (var i = 0, t = true; i < this._event[type].length; i++) {
+        t = this._event[type][i].call(this, data);
+        if (t === false) {
+          v = false
+        }
+      }
+      return v
+    }
+  };
+  var lego = null;
+
   var run = (function () {
     var owner = {};
     return function (mod) {
-      var thisOwner = owner[mod.key] = owner[mod.key] || {};
-      var preservedData = null;
-      if (thisOwner.unload) {
-        try {
-          preservedData = thisOwner.unload();
-        }
-        catch (e) {
-          logger.log(e);
-        }
-      }
+      var thisOwner = owner[mod.key]
       var funed = map(mod.deps, function (key) {
         return readyMod[key].funed;
       })
-      mod.funed = mod.fun.apply(thisOwner, funed);
-      if (preservedData && thisOwner.load) {
+      if (thisOwner && thisOwner.unload) {
         try {
-          thisOwner.load(preservedData);
+          thisOwner.data = thisOwner.unload()
         }
         catch (e) {
           logger.log(e);
         }
       }
+      mod.funed = mod.fun.apply(thisOwner, funed);
       setDepKeys(mod);
-    }
 
+      if (thisOwner && thisOwner.load) {
+        try {
+          thisOwner.load(thisOwner.data)
+        }
+        catch (e) {
+          logger.log(e);
+        }
+      }
+      if (thisOwner) {
+        thisOwner.isHot = true
+        //只要有一个hander返回 false，就会返回false,否则返回 true
+        return lego.emit('reload', mod)
+      }
+      else {
+        owner[mod.key] = { isHot: false, data: {} }
+
+        lego.emit('load', mod)
+      }
+      return true;
+    }
   })();
   var dealSubDependence = (function () {
     var allDepKeys = [];
@@ -131,10 +161,7 @@
     }
     var pathMatch = path.match(/^https?:\/\/[^/]+\/(.+)\.js$/)
     if (pathMatch) {
-      path = pathMatch[1];
-    }
-    else {
-      path = path.replace('.js', '');
+      path = pathMatch[1] + '.js';
     }
     return path;
   }
@@ -226,10 +253,10 @@
     }
   }
   function dealReady(mod) {
-    run(mod);
+    var shouldDealSub = run(mod);
     if (mod.key in readyMod) {
       logger.log('hotload: ' + mod.key);
-      dealSubDependence(mod);
+      shouldDealSub && dealSubDependence(mod);
     }
     else {
       setDepKeys(mod);
@@ -317,16 +344,19 @@
     return (key in readyMod);
   }
 
+  lego = {
+    version: '1.1.0',
+    has: has,
+    inspect: inspect,
+    reset: reset,
+    load: load,
+    setConfig: setConfig,
+    on: event.on,
+    emit: event.emit
+  };
   function defineLegoMod() {
     define('lego', function () {
-      return {
-        version: '1.0.9',
-        has: has,
-        inspect: inspect,
-        reset: reset,
-        load: load,
-        setConfig: setConfig
-      };
+      return lego
     });
   }
   defineLegoMod();
