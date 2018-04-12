@@ -27,27 +27,3 @@ example：
 ```
 hotloadjs add define and require function in global
 
-## examples
-
-examples are in hotloadjs-cli project
-
-``` shell
-npm install -g hotloadjs-cli
-hotloadjs init <projectName>
-```
-
-## Test
-
-### Syntax test
-``` shell
-npm test
-```
-
-if no eslint,need run install 
-
-``` shell
-npm install
-```
-### Test logic
-
-run index.html in test folder, test report come out

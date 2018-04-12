@@ -28,28 +28,4 @@ ie6+ ,和所有现代浏览器
 ```
 hotloadjs会在全局定义 define,require两个方法，用来定义和获取模块
 
-## 演练
-
-实例在 hotloadjs-cli里面
-
-``` shell
-npm install -g hotloadjs-cli
-hotloadjs init <projectName>
-```
-
-## 测试
-
-### 检查语法
-``` shell
-npm test
-```
-
-如果没有安装 eslint 需要先运行
-
-``` shell
-npm install
-```
-### 测试逻辑
-
-在test文件夹里 运行 index.html，可以看到测试报告
 
