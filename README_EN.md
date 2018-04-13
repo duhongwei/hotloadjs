@@ -5,6 +5,7 @@ hotloadjs is a module manager for in-browser use.
 more detail at
 [docuemnt(in constrct)]()
 
+hotloadjs has been integrated to [hotpack](https://github.com/duhongwei/hotpack)
 ## Fetures
 
 - function is not fired until dependencies have loaded

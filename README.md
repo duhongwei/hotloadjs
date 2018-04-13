@@ -6,6 +6,8 @@ hotloadjs 是用于浏览器环境的模块管理器。
 [文档](https://duhongwei.gitbooks.io/hotloadjs/content/zh-cn/)
 
 [README in English](README_EN.md)
+
+hotloadjs 已经集成到 [hotpack](https://github.com/duhongwei/hotpack)
 ## 功能
 
 - 处理依赖
